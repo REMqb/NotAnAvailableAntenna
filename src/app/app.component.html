@@ -1,0 +1,3 @@
+<agm-map [fitBounds]="bounds" disableDefaultUI="true" #map>
+    <agm-marker *ngFor="let antenna of antennas?.entries() || []" [latitude]="antenna[1].lat" [longitude]="antenna[1].long"></agm-marker>
+</agm-map>
