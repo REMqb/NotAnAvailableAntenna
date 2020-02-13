@@ -1,0 +1,5 @@
+<h1>{{ antenna.city }} - {{ antenna.zipCode }}</h1>
+<div>
+    <span>Data: {{ antenna.status.data }} <ng-container *ngIf="antenna.status.data === StatusValue.Hs"> - Since {{ dataDownSince | date }}</ng-container></span>
+    <span>Voice: {{ antenna.status.voice }} <ng-container *ngIf="antenna.status.voice === StatusValue.Hs"> - Since {{ voiceDownSince | date }}</ng-container></span>
+</div>

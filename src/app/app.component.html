@@ -1,3 +1,9 @@
 <agm-map [fitBounds]="bounds" disableDefaultUI="true" #map>
-    <agm-marker *ngFor="let antenna of antennas?.entries() || []" [latitude]="antenna[1].lat" [longitude]="antenna[1].long"></agm-marker>
+    <agm-marker *ngFor="let antenna of antennas?.entries() || []; trackBy: trackFn" [latitude]="antenna[1].lat" [longitude]="antenna[1].long">
+        <agm-snazzy-info-window [maxWidth]="'500px'" [closeWhenOthersOpen]="true" [latitude]="antenna[1].lat" [longitude]="antenna[1].long">
+            <ng-template>
+                <app-antenna-popup [antenna]="antenna[1]"></app-antenna-popup>
+            </ng-template>
+        </agm-snazzy-info-window>
+    </agm-marker>
 </agm-map>

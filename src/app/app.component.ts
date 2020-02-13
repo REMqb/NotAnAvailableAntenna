@@ -28,4 +28,8 @@ export class AppComponent {
         });
     }
 
+    trackFn(index: number, item: [string, Antenna]) {
+        return item[0];
+    }
+
 }
